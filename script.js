@@ -4,7 +4,7 @@ const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
 let alarmsArray = [];
-let alarmSound = new Audio("darren.mp3"); // Replace "./alarm.mp3" with the correct path to your sound file
+let alarmSound = new Audio("alarm-clock.mp3"); // Replace "./alarm.mp3" with the correct path to your sound file
 let alarmIndex = 0;
 
 // Append zeroes for single digit
@@ -162,4 +162,43 @@ const deleteAlarm = (e) => {
 window.onload = () => {
   setInterval(displayTimer, 1000);
   loadAlarmsFromLocalStorage(); // Load alarms from localStorage
+  initialHour = 0;
+  initialMinute = 0;
+  alarmIndex = alarmsArray.length; // Update alarmIndex based on the loaded alarms
+  hourInput.value = appendZero(initialHour);
+  minuteInput.value = appendZero(initialMinute);
 };
+
+alarmSound.loop = false;
+
+hourInput.addEventListener("input", () => {
+  hourInput.value = inputCheck(hourInput.value);
+});
+
+minuteInput.addEventListener("input", () => {
+  minuteInput.value = inputCheck(minuteInput.value);
+
+  // Limitar o valor do input a 59
+  const minuteValue = parseInt(minuteInput.value);
+  if (minuteValue > 59) {
+    minuteInput.value = "59";
+  }
+});
+
+// Adicionamos um evento de escuta no input para horas
+hourInput.addEventListener("input", () => {
+  const value = hourInput.value;
+  // Limitar o valor do input a dois caracteres
+  if (value.length > 2) {
+    hourInput.value = value.slice(0, 2);
+  }
+});
+
+// Adicionamos um evento de escuta no input para minutos
+minuteInput.addEventListener("input", () => {
+  const value = minuteInput.value;
+  // Limitar o valor do input a dois caracteres
+  if (value.length > 2) {
+    minuteInput.value = value.slice(0, 2);
+  }
+});

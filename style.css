@@ -22,8 +22,8 @@
     background: linear-gradient(80deg, #ffffff, #ffffff);
     width: 90%;
     max-width: 31.25em;
-    padding: 2em 3em; /* Adjusted padding to center content better */
-    border-radius: 0.5em;
+  padding: 2em 3em; /* Adjusted padding to center content better */
+  border-radius: 0.5em;
   }
   
   .timer-display {
@@ -105,4 +105,9 @@
     color: #c91a54;
     border: none;
     cursor: pointer;
+  }
+
+  .container {
+    max-height: 60vh; /* Define uma altura máxima de 60% da altura da viewport */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical caso o conteúdo ultrapasse a altura máxima */
   }
