@@ -4,7 +4,7 @@ const minuteInput = document.getElementById("minuteInput");
 const activeAlarms = document.querySelector(".activeAlarms");
 const setAlarm = document.getElementById("set");
 let alarmsArray = [];
-let alarmSound = new Audio("/public/song/darren.mp3"); // Replace "./alarm.mp3" with the correct path to your sound file
+let alarmSound = new Audio("/public/darren.mp3"); // Replace "./alarm.mp3" with the correct path to your sound file
 let alarmIndex = 0;
 
 // Append zeroes for single digit

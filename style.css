@@ -6,7 +6,7 @@
   }
   
   body {
-    background: linear-gradient(5deg, #1a66c9, #3f3f3f);
+    background: linear-gradient(5deg, #c91a54, #3f3f3f);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +49,7 @@
   }
   
   #set {
-    background-color: #377dff;
+    background-color: #c91a54;
     border: none;
     padding: 0.9em 1.8em;
     display: block;
@@ -72,7 +72,7 @@
     appearance: none;
     height: 2em;
     width: 3.75em;
-    background-color: #e2e2ec;
+    background-color: #8f8f8f;
     border-radius: 1.25em;
     position: relative;
     cursor: pointer;
@@ -82,7 +82,7 @@
   .alarm input[type="checkbox"]:before {
     position: absolute;
     content: "";
-    background-color: #757683;
+    background-color: #4b4b4b;
     height: 1.43em;
     width: 1.43em;
     border-radius: 50%;
@@ -91,18 +91,18 @@
   }
   
   .alarm input[type="checkbox"]:checked {
-    background-color: #d2e2ff;
+    background-color: #9b9b9b;
   }
   
   .alarm input[type="checkbox"]:checked:before {
-    background-color: #377dff;
+    background-color: #c91a54;
     left: 2em;
   }
   
   .deleteButton {
     background-color: transparent;
     font-size: 1.5em;
-    color: #377dff;
+    color: #c91a54;
     border: none;
     cursor: pointer;
   }
