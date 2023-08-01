@@ -48,16 +48,18 @@ function displayTimer() {
 }
 
 // Input validation
-const inputCheck = (inputValue) => {
+const inputCheck = (inputValue, max) => {
   inputValue = parseInt(inputValue);
-  if (inputValue < 10) {
-    inputValue = appendZero(inputValue);
+  if (inputValue < 0) {
+    inputValue = 0;
+  } else if (inputValue > max) {
+    inputValue = max;
   }
-  return inputValue;
+  return appendZero(inputValue);
 };
 
 hourInput.addEventListener("input", () => {
-  hourInput.value = inputCheck(hourInput.value);
+  hourInput.value = inputCheck(hourInput.value, 23);
 });
 
 minuteInput.addEventListener("input", () => {
